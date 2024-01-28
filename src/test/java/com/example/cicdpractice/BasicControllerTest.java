@@ -9,7 +9,8 @@ class BasicControllerTest {
 
     @Test
     void test() {
-        int sum = 5 + 5;
+        int sum = 5;
+        sum += 5;
         assertEquals(10, sum);
     }
 }
