@@ -1,0 +1,17 @@
+name : CI
+
+on : push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses : actions/checkout@v2
+
+      - name: permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: test with gradle
+        run: ./gradlew test
+        shell: bash
