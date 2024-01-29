@@ -4,9 +4,10 @@ REPOSITORY=/home/ec2-user/CI-CD-practice
 LOG_DIR=$REPOSITORY/logs
 LOG_FILE="$LOG_DIR/$(date +'%Y-%m-%d').log"
 
-if [ ! -d $LOG_DIR ]
-then
-  mkdir -p $LOG_DIR
+# 로그 디렉토리 생성 시 권한 문제 해결을 위해 sudo를 사용
+if [ ! -d "$LOG_DIR" ]; then
+  sudo mkdir -p "$LOG_DIR"
+  sudo chown ec2-user:ec2-user "$LOG_DIR"
 fi
 
 cd $REPOSITORY
