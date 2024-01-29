@@ -2,7 +2,7 @@
 
 REPOSITORY=/home/ec2-user/CI-CD-practice
 LOG_DIR=$REPOSITORY/logs
-LOG_FILE"$LOG_DIR/$(date+%Y-%m-%d).log"
+LOG_FILE="$LOG_DIR/$(date +%Y-%m-%d).log"
 
 if [ ! -d $LOG_DIR ]
 then
@@ -12,7 +12,7 @@ fi
 cd $REPOSITORY
 
 APP_NAME=CI-CD-practice
-JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep '.jar' | tail -n 1)
+JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
 CURRENT_PID=$(pgrep -f $APP_NAME)
