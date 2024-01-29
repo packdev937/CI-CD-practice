@@ -11,7 +11,7 @@ fi
 
 cd $REPOSITORY
 
-APP_NAME=CI-CD-practice
+APP_NAME=ci-cd-practice # 소문자로 작성해야됨
 JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
