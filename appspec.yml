@@ -9,10 +9,6 @@ permissions:
   - object: /home/ec2-user/CI-CD-practice/
     owner: ec2-user
     group: ec2-user
-  - object: /scripts/deploy.sh
-    mode: 755
-    owner: ec2-user
-    group: ec2-user
 
 hooks:
   AfterInstall:

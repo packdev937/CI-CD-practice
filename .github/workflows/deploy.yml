@@ -2,7 +2,7 @@ name: Build and Deploy Spring Boot to AWS EC2
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 env:
   PROJECT_NAME: CI-CD-practice
@@ -22,6 +22,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
+      - name: Permission for deploy.sh
+        run: chmod +x ./scripts/deploy.sh
 
       - name: Permission for gradle
         run: chmod +x ./gradlew
