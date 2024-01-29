@@ -4,6 +4,7 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/CI-CD-practice
+
 permissions:
   - object: /home/ec2-user/CI-CD-practice/
     owner: ec2-user
