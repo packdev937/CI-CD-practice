@@ -2,11 +2,11 @@
 
 REPOSITORY=/home/ec2-user/CI-CD-practice
 LOG_DIR=$REPOSITORY/logs
-LOG_FILE="$LOG_DIR/$(date +%Y-%m-%d).log"
+LOG_FILE="$LOG_DIR/$(date +'%Y-%m-%d').log"
 
 if [ ! -d $LOG_DIR ]
 then
-  mkdir $LOG_DIR
+  mkdir -p $LOG_DIR
 fi
 
 cd $REPOSITORY
@@ -27,4 +27,4 @@ else
 fi
 
 echo "> $JAR_PATH 배포"
-sudo nohup java -jar $JAR_PATH > $LOG_FILE 2>&1 &
+nohup java -jar $JAR_PATH > $LOG_FILE 2>&1 &
