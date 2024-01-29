@@ -7,8 +7,8 @@ on:
 env:
   PROJECT_NAME: ci-cd-practice
   BUCKET_NAME: pack-ci-cd-bucket
-  CODE_DEPLOY_APP_NAME: cd-cd-test
-  DEPLOYMENT_GROUP_NAME: cd-cd-test-group
+  CODE_DEPLOY_APP_NAME: ci-cd-test
+  DEPLOYMENT_GROUP_NAME: ci-cd-test-group
 
 jobs:
   build:
