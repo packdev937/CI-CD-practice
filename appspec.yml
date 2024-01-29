@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /build/libs/
-    destination: /home/ec2-user/cicdproject
+    destination: /home/ec2-user/CI-CD-pratice
 permissions:
   - object: /home/ec2-user/cicdproject/
     owner: ec2-user
@@ -11,6 +11,6 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: /home/ec2-user/cicdproject/scripts/deploy.sh
+    - location: /home/ec2-user/CI-CD-practice/scripts/deploy.sh
       timeout: 60
       runas: ec2-user
