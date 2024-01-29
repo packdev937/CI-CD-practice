@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  PROJECT_NAME: ci-cd-practice
+  PROJECT_NAME: CI-CD-practice
   BUCKET_NAME: pack-ci-cd-bucket
   CODE_DEPLOY_APP_NAME: ci-cd-test
   DEPLOYMENT_GROUP_NAME: ci-cd-test-group
