@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-REPOSITORY=/deploy
+REPOSITORY=/home/ec2-user/CI-CD-practice
+LOG_DIR=$REPOSITORY/logs
+LOG_FILE"$LOG_DIR/$(date+%Y-%m-%d).log"
+
+if [ ! -d $LOG_DIR ]
+then
+  mkdir $LOG_DIR
+fi
+
 cd $REPOSITORY
 
-APP_NAME=java
+APP_NAME=CI-CD-practice
 JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep '.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
@@ -19,4 +27,4 @@ else
 fi
 
 echo "> $JAR_PATH 배포"
-sudo nohup java -jar $JAR_PATH > /dev/null 2> /dev/null < /dev/null &
+sudo nohup java -jar $JAR_PATH > $LOG_FILE 2>&1 &
